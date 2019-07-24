@@ -1,0 +1,485 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace AAAAAAA
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double media, mediaR, notaM, notaP, notaI, notaRM, notaRP, notaRI;   
+            int respostaconsole,numeroM, resposta1;
+            float numeroRG;
+            bool x = true;
+
+            
+
+            ArrayList nomes = new ArrayList();
+            ArrayList matricula = new ArrayList();
+            ArrayList RG = new ArrayList();
+
+
+
+            
+
+            Console.WriteLine("O que deseja fazer ?");
+            Console.WriteLine("1)Cadastrar Aluno   2)Inserir Nota Aluno   3)Excluir Cadastro Aluno   4)Sair");
+            respostaconsole=int.Parse(Console.ReadLine());
+
+            Console.WriteLine("");
+
+                if (respostaconsole == 1)
+                {
+
+                    Console.WriteLine("Informe o nome do Aluno: ");
+
+                nomes.Add(Console.ReadLine());
+
+            Console.WriteLine("");
+
+                Console.WriteLine("Informe o número do RG: ");
+                    numeroRG = float.Parse(Console.ReadLine());
+
+                Console.WriteLine("");
+
+                Console.WriteLine("Informe o número da matrícula: ");
+                    matricula.Add(Console.ReadLine());
+
+                Console.WriteLine("");
+
+                Console.WriteLine("Cadastro efetuado com sucesso! ");
+
+                Console.WriteLine("");
+
+
+                Console.WriteLine("O que deseja fazer ?");
+                    Console.WriteLine("1)Cadastrar Aluno   2)Saír");
+                    resposta1 = int.Parse(Console.ReadLine());
+
+                while (resposta1 == 1)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Informe o nome do Aluno: ");
+                    nomes.Add(Console.ReadLine());
+                    Console.WriteLine("");
+
+                    Console.WriteLine("Informe o número do RG: ");
+                    numeroRG = float.Parse(Console.ReadLine());
+                    Console.WriteLine("");
+
+                    Console.WriteLine("Informe o número da matrícula: ");
+                    matricula.Add(Console.ReadLine());
+                    Console.WriteLine("");
+
+                    Console.WriteLine("Cadastro efetuado com sucesso! ");
+                    Console.WriteLine("");
+
+
+                    Console.WriteLine("O que deseja fazer ?");
+                    Console.WriteLine("1)Cadastrar Aluno   2)Saír");
+                    resposta1 = int.Parse(Console.ReadLine());
+                    if (resposta1 != 2 )
+                    {
+                        x = false;
+                        
+                        while (x == false)
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("Respostas Inválida !");
+                            Console.WriteLine("");
+                            Console.WriteLine("O que deseja fazer ?");
+                            Console.WriteLine("1)Cadastrar Aluno   2)Saír");
+                            resposta1 = int.Parse(Console.ReadLine());
+                            if(resposta1==1 || resposta1 == 2) { x = true; }
+                        }
+                    }
+
+
+
+                }
+
+                }
+//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            if (respostaconsole == 2)
+            {
+
+                Console.WriteLine("informe o número da matrícula: ");
+                numeroM = int.Parse(Console.ReadLine());
+                Console.WriteLine("");
+
+
+
+                Console.WriteLine("Informe a nota de matemática: ");
+                notaM = double.Parse(Console.ReadLine());
+                if (notaM >= 0 && notaM <= 10) { x = true; }
+                if (notaM < 0 || notaM > 10)
+                {
+                    x = false;
+                    Console.WriteLine("");
+                    Console.WriteLine("Nota inválida !");
+                    Console.WriteLine("");
+
+                    while (x != true)
+                    {
+                        Console.WriteLine("Informe a nota de matemática: ");
+                        notaM = double.Parse(Console.ReadLine());
+                        if (notaM >= 0 && notaM <= 10) { x = true; }
+                    }
+
+                }
+
+
+                Console.WriteLine("");
+                Console.WriteLine("Informe a nota de Português: ");
+                notaP = double.Parse(Console.ReadLine());
+                if (notaP < 0 || notaP > 10)
+                {
+                    x = false;
+                    Console.WriteLine("Nota inválida !");
+                    while (x != true)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Informe a nota de Português: ");
+                        notaP = double.Parse(Console.ReadLine());
+                        if (notaP >= 0 && notaP <= 10) { x = true; }
+
+                    }
+
+                }
+
+                Console.WriteLine("");
+                Console.WriteLine("Informe a nota de Inglês: ");
+                notaI = double.Parse(Console.ReadLine());
+                if (notaI < 0 || notaI > 10)
+                {
+                    x = false;
+                    Console.WriteLine("Nota inválida !");
+                    while (x != true)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Informe a nota de Inglês: ");
+                        notaI = double.Parse(Console.ReadLine());
+                        if (notaI >= 0 && notaI <= 10) { x = true; }
+                    }
+
+                }
+
+
+
+
+                media = (notaM + notaP + notaI) / 3;
+
+
+
+                if (media == 10)
+
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Aluno aprovado com mérito !");
+                }
+                else
+            if (media >= 7)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Aluno aprovado ! ");
+                }
+
+               
+
+                if (media <= 3)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Aluno reprovado !");
+                }else
+
+
+                if (media < 7)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Aluno em recuperação !");
+                    Console.WriteLine("");
+                    Console.WriteLine("Informe a nota da recuperação de Matemática: ");
+                    notaRM = double.Parse(Console.ReadLine());
+                    if (notaRM < 0 || notaRM > 10)
+                    {
+                        x = false;
+
+
+                        while (x != true)
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("Nota inválida!");
+                            Console.WriteLine("");
+                            Console.WriteLine("Informe a nota da recuperação de Matemática: ");
+                            notaRM = double.Parse(Console.ReadLine());
+                            if (notaRM >= 0 && notaRM <= 10) { x = true; }
+                        }
+                    }
+
+                    Console.WriteLine("");
+                    Console.WriteLine("Informe a nota da recuperação de Português: ");
+                    notaRP = double.Parse(Console.ReadLine());
+                    if (notaRP < 0 || notaRP > 10)
+                    {
+                        x = false;
+                        while (x != true)
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("Nota Inválida !");
+                            Console.WriteLine("");
+                            Console.WriteLine("Informe a nota da recuperação de Português: ");
+                            notaRP = double.Parse(Console.ReadLine());
+                            if (notaRP >= 0 && notaRP <= 10) { x = true; }
+                        }
+                    }
+
+                    Console.WriteLine("");
+                    Console.WriteLine("Informe a nota de recuperação de Inglês: ");
+                    notaRI = double.Parse(Console.ReadLine());
+                    if (notaRI < 0 || notaRI > 10)
+                    {
+                        x = false;
+                        while (x == false)
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("Nota Inválida !");
+                            Console.WriteLine("");
+                            Console.WriteLine("Informe a nota de recuperação de Inglês: ");
+                            notaRI = double.Parse(Console.ReadLine());
+                            if (notaRI >= 0 && notaRI <= 10) { x = true; }
+                        }
+                    }
+
+
+                    mediaR = (notaRM + notaRP + notaRI) / 3;
+
+                    if (mediaR >= 7)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Aluno Aprovado !");
+                    } else
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Aluno reprovado !");
+                    }
+
+
+                }
+
+            }
+
+            //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            Console.WriteLine("");
+            Console.WriteLine("O que deseja fazer ?");
+            Console.WriteLine("1)Inserir Nota Aluno   2)Saír");
+            resposta1 = int.Parse(Console.ReadLine());
+            
+
+            while (resposta1 == 1)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("informe o número da matrícula: ");
+                numeroM = int.Parse(Console.ReadLine());
+                Console.WriteLine("");
+
+
+
+                Console.WriteLine("Informe a nota de matemática: ");
+                notaM = double.Parse(Console.ReadLine());
+                if (notaM >= 0 && notaM <= 10) { x = true; }
+                if (notaM < 0 || notaM > 10)
+                {
+                    x = false;
+                    Console.WriteLine("");
+                    Console.WriteLine("Nota inválida !");
+                    Console.WriteLine("");
+
+                    while (x != true)
+                    {
+                        Console.WriteLine("Informe a nota de matemática: ");
+                        notaM = double.Parse(Console.ReadLine());
+                        if (notaM >= 0 && notaM <= 10) { x = true; }
+                    }
+
+                }
+
+
+                Console.WriteLine("");
+                Console.WriteLine("Informe a nota de Português: ");
+                notaP = double.Parse(Console.ReadLine());
+                if (notaP < 0 || notaP > 10)
+                {
+                    x = false;
+                    Console.WriteLine("Nota inválida !");
+                    while (x != true)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Informe a nota de Português: ");
+                        notaP = double.Parse(Console.ReadLine());
+                        if (notaP >= 0 && notaP <= 10) { x = true; }
+
+                    }
+
+                }
+
+                Console.WriteLine("");
+                Console.WriteLine("Informe a nota de Inglês: ");
+                notaI = double.Parse(Console.ReadLine());
+                if (notaI < 0 || notaI > 10)
+                {
+                    x = false;
+                    Console.WriteLine("Nota inválida !");
+                    while (x != true)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Informe a nota de Inglês: ");
+                        notaI = double.Parse(Console.ReadLine());
+                        if (notaI >= 0 && notaI <= 10) { x = true; }
+                    }
+
+                }
+
+
+
+
+                media = (notaM + notaP + notaI) / 3;
+
+
+
+                if (media == 10)
+
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Aluno aprovado com mérito !");
+                    Console.WriteLine("");
+                }
+                else
+            if (media >= 7)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Aluno aprovado ! ");
+                    Console.WriteLine("");
+                }
+
+
+
+                if (media <= 3)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Aluno reprovado !");
+                    Console.WriteLine("");
+                }
+                else
+
+
+                if (media < 7)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Aluno em recuperação !");
+                    Console.WriteLine("Informe a nota da recuperação de Matemática: ");
+                    notaRM = double.Parse(Console.ReadLine());
+                    if (notaRM < 0 || notaRM > 10)
+                    {
+                        x = false;
+
+
+                        while (x != true)
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("Nota inválida!");
+                            Console.WriteLine("Informe a nota da recuperação de Matemática: ");
+                            notaRM = double.Parse(Console.ReadLine());
+                            if (notaRM >= 0 && notaRM <= 10) { x = true; }
+                        }
+                    }
+
+                    Console.WriteLine("");
+                    Console.WriteLine("Informe a nota da recuperação de Português: ");
+                    notaRP = double.Parse(Console.ReadLine());
+                    if (notaRP < 0 || notaRP > 10)
+                    {
+                        x = false;
+                        while (x != true)
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("Nota Inválida !");
+                            Console.WriteLine("Informe a nota da recuperação de Português: ");
+                            notaRP = double.Parse(Console.ReadLine());
+                            if (notaRP >= 0 && notaRP <= 10) { x = true; }
+                        }
+                    }
+
+                    Console.WriteLine("");
+                    Console.WriteLine("Informe a nota de recuperação de Inglês: ");
+                    notaRI = double.Parse(Console.ReadLine());
+                    if (notaRI < 0 || notaRI > 10)
+                    {
+                        x = false;
+                        while (x == false)
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("Nota Inválida !");
+                            Console.WriteLine("Informe a nota de recuperação de Inglês: ");
+                            notaRI = double.Parse(Console.ReadLine());
+                            if (notaRI >= 0 && notaRI <= 10) { x = true; }
+                        }
+                    }
+
+
+                    mediaR = (notaRM + notaRP + notaRI) / 3;
+
+                    if (mediaR >= 7)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Aluno Aprovado !");
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Aluno reprovado !");
+                        
+                    }
+
+
+                }
+
+                Console.WriteLine("");
+                Console.WriteLine("O que deseja fazer ?");
+                Console.WriteLine("1)Inserir Nota Aluno   2)Saír");
+                resposta1 = int.Parse(Console.ReadLine());
+                if (resposta1 != 2)
+                {
+                    x = false;
+
+                    while (x == false)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Respostas Inválida !");
+                        Console.WriteLine("");
+                        Console.WriteLine("O que deseja fazer ?");
+                        Console.WriteLine("1)Cadastrar Aluno   2)Saír");
+                        resposta1 = int.Parse(Console.ReadLine());
+                        if (resposta1 == 1 || resposta1 == 2) { x = true; }
+                    }
+                }
+
+
+
+
+
+            }
+
+
+
+
+            Console.ReadKey();
+
+        }
+    }
+}
